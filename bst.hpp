@@ -50,7 +50,7 @@ struct Node{
     V value() noexcept {return _data.second;}
 }; // end of the struct Node declaration and definition
 
-
+/// declaration of the members and methods of bst class
 template <typename K, typename V, typename C = std::less<K> >
 class bst{
     private:
@@ -225,3 +225,41 @@ typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K& key) const {
     return end();
 }
 
+/// To insert a node inside the bst
+template <typename K, typename V, typename C> 
+std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std::pair<const K, V>& data){
+
+
+    if (_root == nullptr){
+        _root.reset(new Node<K, V>{data, nullptr});
+        return std::make_pair(iterator(_root.get()), trur);
+    }
+    auto p = _root.get();
+    bool go_left;
+    bool go_right;
+
+    while(true){
+
+        go_right = comp(p->_data.first, data.first);
+        go_left = comp(data.first, p->_data.first);
+        if(go_right){
+            if(p->_right)
+               p = (p->_right).get();
+            else{
+
+                p ->_right.reset(new Node<K, V>{data, p});
+                return std::make_pair(iterator(p->_right.get()), true);
+            }   
+        }
+        else if(go_left){
+            if(p->_left)
+               p = (p->_left).get();
+            else{
+                p->_left.reset(new Node<K, V> {data, p});
+                return std::make_pair(iterator(p->_left.get()), true);
+            }   
+        }
+        else
+          return std::make_pair(iterator(p), false);
+    }
+}
