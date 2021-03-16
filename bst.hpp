@@ -202,7 +202,7 @@ typename bst<K, V, C>::iterator bst<K, V, C>::find(const K & key){
     return end();
 
 }
-
+/// To find an node inside the binary tree
 template <typename K,  typename V, typename C>
 typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K& key) const {
 

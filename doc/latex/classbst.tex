@@ -1,0 +1,87 @@
+\hypertarget{classbst}{}\doxysection{bst$<$ K, V, C $>$ Class Template Reference}
+\label{classbst}\index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbst_aa2020bb7983841d5cebaa5c3b09c4574}\label{classbst_aa2020bb7983841d5cebaa5c3b09c4574}} 
+using {\bfseries iterator} = \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ std\+::pair$<$ const K, V $>$ $>$
+\item 
+\mbox{\Hypertarget{classbst_a7ef9989b16e341584a90bc781ebddf94}\label{classbst_a7ef9989b16e341584a90bc781ebddf94}} 
+using {\bfseries const\+\_\+iterator} = \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ const std\+::pair$<$ const K, V $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbst_ade2639d2473253f2f3d28096b7a4b901}\label{classbst_ade2639d2473253f2f3d28096b7a4b901}} 
+{\bfseries bst} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept=default
+\item 
+\mbox{\Hypertarget{classbst_a62ad4766ba5a47bfb2bdfd79f5cd468e}\label{classbst_a62ad4766ba5a47bfb2bdfd79f5cd468e}} 
+\mbox{\hyperlink{classbst}{bst}} \& {\bfseries operator=} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept=default
+\item 
+\mbox{\Hypertarget{classbst_a349a2c333e9fd9a9884427416bc8485b}\label{classbst_a349a2c333e9fd9a9884427416bc8485b}} 
+{\bfseries bst} (const \mbox{\hyperlink{classbst}{bst}} \&tree)
+\item 
+\mbox{\Hypertarget{classbst_a75a856b6ab9d892259434be61319248a}\label{classbst_a75a856b6ab9d892259434be61319248a}} 
+\mbox{\hyperlink{classbst}{bst}} \& {\bfseries operator=} (\mbox{\hyperlink{classbst}{bst}} \&tree)
+\item 
+\mbox{\Hypertarget{classbst_a210e89344ef32f01e59eb6dc3c38f1fd}\label{classbst_a210e89344ef32f01e59eb6dc3c38f1fd}} 
+\mbox{\hyperlink{struct_node}{Node}}$<$ K, V $>$ $\ast$ {\bfseries root} () noexcept
+\item 
+\mbox{\Hypertarget{classbst_a65068da5e20b8c4b37b3bbda23ad8320}\label{classbst_a65068da5e20b8c4b37b3bbda23ad8320}} 
+void {\bfseries clear} () noexcept
+\item 
+\mbox{\Hypertarget{classbst_a4ff6acbab2cc19f71bd9b81ef9b3e173}\label{classbst_a4ff6acbab2cc19f71bd9b81ef9b3e173}} 
+{\footnotesize template$<$typename T $>$ }\\V \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (T \&\&key)
+\item 
+\mbox{\Hypertarget{classbst_aa266a01931f0f409b57271365654c46e}\label{classbst_aa266a01931f0f409b57271365654c46e}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{iterator}} {\bfseries begin} () noexcept
+\item 
+\mbox{\Hypertarget{classbst_afbb7e94692c997536dbbbaf4ba967fad}\label{classbst_afbb7e94692c997536dbbbaf4ba967fad}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{iterator}} {\bfseries end} () noexcept
+\item 
+\mbox{\Hypertarget{classbst_aff3a1455e4738200463b6133529581ea}\label{classbst_aff3a1455e4738200463b6133529581ea}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{const\+\_\+iterator}} {\bfseries begin} () const noexcept
+\item 
+\mbox{\Hypertarget{classbst_ac00bd613492e7a0018a78e17849403a7}\label{classbst_ac00bd613492e7a0018a78e17849403a7}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{const\+\_\+iterator}} {\bfseries end} () const noexcept
+\item 
+\mbox{\Hypertarget{classbst_aa232fc2ce36fe515d06b9724961b261b}\label{classbst_aa232fc2ce36fe515d06b9724961b261b}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{const\+\_\+iterator}} {\bfseries cbegin} () const noexcept
+\item 
+\mbox{\Hypertarget{classbst_a1f87b66da48c605c7414ab0769573ecb}\label{classbst_a1f87b66da48c605c7414ab0769573ecb}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{const\+\_\+iterator}} {\bfseries cend} () const noexcept
+\item 
+\mbox{\Hypertarget{classbst_ae4846708fd2688ce523268b8b6fac4e1}\label{classbst_ae4846708fd2688ce523268b8b6fac4e1}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{iterator}} {\bfseries find} (const K \&key)
+\item 
+\mbox{\Hypertarget{classbst_af37947378c3df26ebfef5fb65af8a274}\label{classbst_af37947378c3df26ebfef5fb65af8a274}} 
+\mbox{\hyperlink{classbst_1_1____iterator}{const\+\_\+iterator}} {\bfseries find} (const K \&key) const
+\item 
+\mbox{\Hypertarget{classbst_ae64035db916c138a5a4fdb1002d6a771}\label{classbst_ae64035db916c138a5a4fdb1002d6a771}} 
+std\+::pair$<$ \mbox{\hyperlink{classbst_1_1____iterator}{iterator}}, bool $>$ {\bfseries insert} (const std\+::pair$<$ const K, V $>$ \&data)
+\item 
+\mbox{\Hypertarget{classbst_a483baa67b637f14177f49e3de0e9ba1e}\label{classbst_a483baa67b637f14177f49e3de0e9ba1e}} 
+std\+::pair$<$ \mbox{\hyperlink{classbst_1_1____iterator}{iterator}}, bool $>$ {\bfseries insert} (std\+::pair$<$ const K, V $>$ \&\&data)
+\item 
+\mbox{\Hypertarget{classbst_ae6dba1d61e0177e4785d098530e1715e}\label{classbst_ae6dba1d61e0177e4785d098530e1715e}} 
+{\footnotesize template$<$typename... Type$>$ }\\std\+::pair$<$ \mbox{\hyperlink{classbst_1_1____iterator}{iterator}}, bool $>$ {\bfseries emplace} (Types \&\&... args)
+\item 
+\mbox{\Hypertarget{classbst_a7f19b323c658e473765b07ab4358ae44}\label{classbst_a7f19b323c658e473765b07ab4358ae44}} 
+void {\bfseries balance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbst_a5982673298cbff8b6f97670aae801b93}\label{classbst_a5982673298cbff8b6f97670aae801b93}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classbst}{bst}} \&tree)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bst.\+hpp\end{DoxyCompactItemize}
