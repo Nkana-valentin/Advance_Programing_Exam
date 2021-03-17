@@ -26,13 +26,13 @@ struct Node{
     Node(const std::pair<const K, V>& data, Node *parent) noexcept : _left{}, _right{}, _parent{}, _data{data} {}
 
     // move assignment constructor
-    Node(std::pair<const K, V>&& data, Node *left, Node *right, Node *parent) noexcept :\ 
+    Node(std::pair<const K, V>&& data, Node *left, Node *right, Node *parent) noexcept :
     _left{left}, _right{right}, _parent{parent}, _data{std::move(data)} {}
 
-    Node(std::pair<const K, V>&& data) noexcept :\ 
+    Node(std::pair<const K, V>&& data) noexcept :
     _left{}, _right{}, _parent{}, _data{std::move(data)} {}
 
-    Node(std::pair<const K, V>&& data, Node *parent) noexcept :\ 
+    Node(std::pair<const K, V>&& data, Node *parent) noexcept :
     _left{}, _right{}, _parent{parent}, _data{std::move(data)} {}
 
     explicit Node(const std::unique_ptr<Node>& n) : _left{}, _right{}, _parent{}, _data{n->_data}{
@@ -57,7 +57,7 @@ class bst{
       std::unique_ptr<Node<K, V> > _root;
       C comp = C();
 
-      void fill_bst(std::vector<std::pair<const K, V> >& vec, int begin, int end);
+      void fill_tree(std::vector<std::pair<const K, V> >& vec, int begin, int end);
     public:
       bst() noexcept = default;
 
@@ -107,7 +107,7 @@ class bst{
       }
 
       const_iterator begin() const noexcept{
-          auto p = _root.get();l
+          auto p = _root.get();
           if(!p)
              return const_iterator(p);
           while(p ->_left)   
@@ -141,7 +141,7 @@ class bst{
 
       std::pair<iterator, bool> insert(std::pair<const K, V>&& data);
 
-      template <typename... Type> 
+      template <typename... Types> 
       std::pair<iterator, bool> emplace(Types&&... args);
 
       friend std::ostream& operator<<(std::ostream& os, const bst& tree){
@@ -153,7 +153,7 @@ class bst{
       void balance();
 };    // end of the  bst class declaration
 
-// Begin of the class definition
+// Begin of the definition the members of the class bst
 template <typename K, typename V, typename C>
 void bst<K, V,C>::fill_tree(std::vector< std::pair< const K, V>>& vec, int begin, int end){
 
@@ -162,7 +162,7 @@ void bst<K, V,C>::fill_tree(std::vector< std::pair< const K, V>>& vec, int begin
       return;
 
     fill_tree(vec, begin, (begin + end)/2 - 1);
-    fill_tree(vec, (begin + end)/2 + 1, end)  
+    fill_tree(vec, (begin + end)/2 + 1, end);
 }
 
 template <typename K, typename V, typename C>
@@ -180,7 +180,7 @@ void bst <K, V, C>::balance(){
 
 }
 
-template <typename K, typename V, typename C>.
+template <typename K, typename V, typename C>
 typename bst<K, V, C>::iterator bst<K, V, C>::find(const K & key){
 
     auto p = _root.get();
@@ -225,14 +225,14 @@ typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K& key) const {
     return end();
 }
 
-/// To insert a node inside the bst
+/// To insert a node inside the bst first version 
 template <typename K, typename V, typename C> 
 std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std::pair<const K, V>& data){
 
 
     if (_root == nullptr){
         _root.reset(new Node<K, V>{data, nullptr});
-        return std::make_pair(iterator(_root.get()), trur);
+        return std::make_pair(iterator(_root.get()), true);
     }
     auto p = _root.get();
     bool go_left;
@@ -258,6 +258,51 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std:
                 p->_left.reset(new Node<K, V> {data, p});
                 return std::make_pair(iterator(p->_left.get()), true);
             }   
+        }
+        else
+          return std::make_pair(iterator(p), false);
+    }
+}
+//// Move assignment 
+template <typename K, typename V, typename C>
+std::pair<typename bst<K, V,C>::iterator, bool>bst<K, V, C>::insert(std::pair<const K, V> && data){
+    if (_root == nullptr){
+        _root.reset(new Node<K, V> {std::move(data), nullptr});
+        return std::make_pair(iterator(_root.get()), true);
+    }
+    auto p = _root.get();
+
+    bool go_left;
+    bool go_right;
+
+    while(true){
+        go_right =  comp(p->_data.first, data.first);
+        go_left = comp(data.first, p->_data.first);
+
+        if (go_right){
+
+            if(p->_right)
+
+               p = (p->_right).get();
+
+            else{
+
+                p->_right.reset(new Node<K, V> {std::move(data), p});
+                return std::make_pair(iterator(p->_right.get()), true);
+            }   
+        }
+
+        else if (go_left){
+
+            if(p->_left)
+
+                p = (p->_left).get();
+
+            else { 
+
+                p->_left.reset(new Node<K, V> {std::move(data), p});
+                return std::make_pair(iterator(p->_left.get()), true);
+            }
         }
         else
           return std::make_pair(iterator(p), false);
