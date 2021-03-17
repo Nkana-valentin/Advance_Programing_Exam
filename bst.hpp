@@ -308,3 +308,28 @@ std::pair<typename bst<K, V,C>::iterator, bool>bst<K, V, C>::insert(std::pair<co
           return std::make_pair(iterator(p), false);
     }
 }
+
+/// definition of the emplace method
+
+template <typename K, typename V, typename C>
+template <typename... Types>
+std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::emplace(Types&&... args){
+
+    return insert(std::pair<const K, V>  {std::forward<Types>(args)...});
+}
+
+/// Overloadding of the operator []
+template <typename K, typename V, typename C>
+template<typename T>
+V& bst<K, V, C>::operator[](T&& key){
+    
+    auto p = find(std::forward<T>(key));
+
+    if (p !=end())
+       return p->second;
+    else{
+
+        p = insert(std::forward<T>(key), V{}).first;
+        return p->second;
+    }   
+}
