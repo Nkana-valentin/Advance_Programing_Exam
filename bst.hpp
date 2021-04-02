@@ -345,13 +345,13 @@ class bst<K, V, C>::__iterator{
 
       explicit __iterator(Node<K, V>* x) noexcept: current{x} {}
       using value_type =0; // the type name of the iterator
-      using difference_type = std::ptrdiff_t;
+      using diff_type = std::ptrdiff_t;
       using iterator_category = std::forward_iterator_tag;
-      using reference = value_type&;
-      using pointer = value_type*;
+      using ref = value_type&;
+      using point = value_type*;
 
-      reference operator*() const noexcept {return current->_data; } // return 0 reference
-      pointer operator->() const noexcept {return &(*(*this)); }
+      ref operator*() const noexcept {return current->_data; } // return 0 reference
+      point operator->() const noexcept {return &(*(*this)); }
 
       friend bool operator ==(const __iterator & a, const __iterator &b){
 
@@ -363,7 +363,7 @@ class bst<K, V, C>::__iterator{
           return !(a == b);
       }
 
-      __iterator & operator ++() noexcept { //pre increment
+      __iterator & operator++() noexcept { //pre increment
 
       auto current_right = current->_right.get();
       auto current_parent = current->_parent;
@@ -387,5 +387,6 @@ class bst<K, V, C>::__iterator{
 
       }
         
-
 };
+
+#endif
