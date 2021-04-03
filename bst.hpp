@@ -23,7 +23,7 @@ struct Node{
 
     Node(const std::pair<const K, V>& data) noexcept : _left{}, _right{}, _parent{}, _data{data} {}
 
-    Node(const std::pair<const K, V>& data, Node *parent) noexcept : _left{}, _right{}, _parent{}, _data{data} {}
+    Node(const std::pair<const K, V>& data, Node *parent) noexcept : _left{}, _right{}, _parent{parent}, _data{data} {}
 
     // move assignment constructor
     Node(std::pair<const K, V>&& data, Node *left, Node *right, Node *parent) noexcept :
