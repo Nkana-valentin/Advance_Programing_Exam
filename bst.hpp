@@ -41,8 +41,8 @@ struct Node{
             _left = std::make_unique<Node>(n-> _left);
             _left->_parent = this;
         }
-        if(n -> _right){
-            _right = std::make_unique<Node>(n -> _right);
+        if(n->_right){
+            _right = std::make_unique<Node>(n->_right);
             _right->_parent = this;
         }
     }
@@ -86,6 +86,7 @@ class bst{
       
       template<typename T>
       V& operator[](T&& key);
+      
       template <typename O>
       class __iterator;
 
@@ -157,7 +158,8 @@ class bst{
 template <typename K, typename V, typename C>
 void bst<K, V,C>::fill_tree(std::vector< std::pair< const K, V>>& vec, int begin, int end){
 
-    insert(vec[(begin + end)]/2);
+    insert(vec[ (begin + end)/2 ]);
+    
     if(begin >=end)
       return;
 
@@ -170,7 +172,7 @@ void bst <K, V, C>::balance(){
     if (! _root)
        return;
 
-    std::vector<std::pair<const K, V>> temp_vec{}; // define a temporary vector of key-value
+    std::vector< std::pair<const K, V> > temp_vec{}; // define a temporary vector of key-value
     for(auto it=begin(); it !=end(); ++it)
         temp_vec.push_back(*it);
 
@@ -335,6 +337,7 @@ V& bst<K, V, C>::operator[](T&& key){
 }
 
 /// Iterator definition of the class bst
+//struct Node;
 
 template <typename K, typename V, typename C>
 template<typename O>
@@ -344,21 +347,21 @@ class bst<K, V, C>::__iterator{
       public:
 
       explicit __iterator(Node<K, V>* x) noexcept: current{x} {}
-      using value_type =0; // the type name of the iterator
-      using diff_type = std::ptrdiff_t;
+      using value_type = O; // the typename of the iterator
+      using difference_type = std::ptrdiff_t;
       using iterator_category = std::forward_iterator_tag;
-      using ref = value_type&;
-      using point = value_type*;
+      using reference = value_type&;
+      using pointer = value_type*;
 
-      ref operator*() const noexcept {return current->_data; } // return 0 reference
-      point operator->() const noexcept {return &(*(*this)); }
+      reference operator*() const noexcept {return current->_data; } // return 0 reference
+      pointer operator->()  const noexcept {return &(*(*this)); }
 
-      friend bool operator ==(const __iterator & a, const __iterator &b){
+      friend bool operator ==(const __iterator &a, const __iterator &b){
 
           return a.current ==b.current;
       }
 
-      friend bool operator!=(const __iterator & a, const __iterator & b){
+      friend bool operator!=(const __iterator &a, const __iterator &b){
 
           return !(a == b);
       }
@@ -376,7 +379,7 @@ class bst<K, V, C>::__iterator{
       }
       else{
 
-          while (current_parent && current_parent->right.get() == current){
+          while (current_parent && current_parent->_right.get() == current){
                  current = current_parent;
                  current_parent = current_parent->_parent;
           }
