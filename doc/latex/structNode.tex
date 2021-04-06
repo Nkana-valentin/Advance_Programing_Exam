@@ -1,0 +1,158 @@
+\hypertarget{structNode}{}\doxysection{Node$<$ K, V $>$ Struct Template Reference}
+\label{structNode}\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+
+
+Definition and declaration of the object \mbox{\hyperlink{structNode}{Node}}.  
+
+
+
+
+{\ttfamily \#include $<$bst.\+hpp$>$}
+
+
+
+Collaboration diagram for Node$<$ K, V $>$\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNode_a6b8480f603cd5cbfb81737d7925b49c6}{Node}} (const std\+::pair$<$ const K, V $>$ \&data, \mbox{\hyperlink{structNode}{Node}} $\ast$left, \mbox{\hyperlink{structNode}{Node}} $\ast$right, \mbox{\hyperlink{structNode}{Node}} $\ast$parent) noexcept
+\item 
+\mbox{\hyperlink{structNode_ad6ef253290391e35f4b8883f2cca8ec4}{Node}} (const std\+::pair$<$ const K, V $>$ \&data) noexcept
+\item 
+\mbox{\hyperlink{structNode_a683cfdffbf7b9399d3655f4e509fdc1d}{Node}} (const std\+::pair$<$ const K, V $>$ \&data, \mbox{\hyperlink{structNode}{Node}} $\ast$parent) noexcept
+\item 
+\mbox{\hyperlink{structNode_a95cec9832df0129148c2eb6e20318a1f}{Node}} (std\+::pair$<$ const K, V $>$ \&\&data, \mbox{\hyperlink{structNode}{Node}} $\ast$left, \mbox{\hyperlink{structNode}{Node}} $\ast$right, \mbox{\hyperlink{structNode}{Node}} $\ast$parent) noexcept
+\item 
+\mbox{\hyperlink{structNode_a146d8993f989ae18dc734b503baa26ef}{Node}} (std\+::pair$<$ const K, V $>$ \&\&data) noexcept
+\item 
+\mbox{\hyperlink{structNode_a11d2e9aaa02512e73304000cf10f81ad}{Node}} (std\+::pair$<$ const K, V $>$ \&\&data, \mbox{\hyperlink{structNode}{Node}} $\ast$parent) noexcept
+\item 
+\mbox{\hyperlink{structNode_a506698bbe40cb49ebeb24d88418a0561}{Node}} (const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}} $>$ \&n)
+\item 
+const K \mbox{\hyperlink{structNode_acc3a4caeaf63fdabce99f77b09c67b47}{key}} () noexcept
+\item 
+V \mbox{\hyperlink{structNode_acae3ee9fb629cc87e188a98a88ab9c7d}{value}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}} $>$ \mbox{\hyperlink{structNode_ac4cd1432c813a1a6c0fb46448162cc46}{\+\_\+left}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}} $>$ \mbox{\hyperlink{structNode_a6fda0a78f3076f5ee10165fc2ef33333}{\+\_\+right}}
+\item 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{structNode_a79de0074655fe7c829c5d534e52e4ae4}{\+\_\+parent}}
+\item 
+std\+::pair$<$ const K, V $>$ \mbox{\hyperlink{structNode_a1e3f84759fc63895add336d5d80f83f3}{\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$\newline
+struct Node$<$ K, V $>$}
+
+Definition and declaration of the object \mbox{\hyperlink{structNode}{Node}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structNode_a6b8480f603cd5cbfb81737d7925b49c6}\label{structNode_a6b8480f603cd5cbfb81737d7925b49c6}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ const K, V $>$ \&}]{data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{left,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{right,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_ad6ef253290391e35f4b8883f2cca8ec4}\label{structNode_ad6ef253290391e35f4b8883f2cca8ec4}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ const K, V $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_a683cfdffbf7b9399d3655f4e509fdc1d}\label{structNode_a683cfdffbf7b9399d3655f4e509fdc1d}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ const K, V $>$ \&}]{data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_a95cec9832df0129148c2eb6e20318a1f}\label{structNode_a95cec9832df0129148c2eb6e20318a1f}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{left,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{right,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_a146d8993f989ae18dc734b503baa26ef}\label{structNode_a146d8993f989ae18dc734b503baa26ef}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_a11d2e9aaa02512e73304000cf10f81ad}\label{structNode_a11d2e9aaa02512e73304000cf10f81ad}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_a506698bbe40cb49ebeb24d88418a0561}\label{structNode_a506698bbe40cb49ebeb24d88418a0561}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $>$ \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structNode_acc3a4caeaf63fdabce99f77b09c67b47}\label{structNode_acc3a4caeaf63fdabce99f77b09c67b47}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!key@{key}}
+\index{key@{key}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+const K \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structNode_acae3ee9fb629cc87e188a98a88ab9c7d}\label{structNode_acae3ee9fb629cc87e188a98a88ab9c7d}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!value@{value}}
+\index{value@{value}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+V \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structNode_a1e3f84759fc63895add336d5d80f83f3}\label{structNode_a1e3f84759fc63895add336d5d80f83f3}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!\_data@{\_data}}
+\index{\_data@{\_data}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{\_data}{\_data}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::pair$<$const K, V$>$ \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\+\_\+data}
+
+\mbox{\Hypertarget{structNode_ac4cd1432c813a1a6c0fb46448162cc46}\label{structNode_ac4cd1432c813a1a6c0fb46448162cc46}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!\_left@{\_left}}
+\index{\_left@{\_left}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{\_left}{\_left}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structNode}{Node}}$>$ \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\+\_\+left}
+
+\mbox{\Hypertarget{structNode_a79de0074655fe7c829c5d534e52e4ae4}\label{structNode_a79de0074655fe7c829c5d534e52e4ae4}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!\_parent@{\_parent}}
+\index{\_parent@{\_parent}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{\_parent}{\_parent}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$\ast$ \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\+\_\+parent}
+
+\mbox{\Hypertarget{structNode_a6fda0a78f3076f5ee10165fc2ef33333}\label{structNode_a6fda0a78f3076f5ee10165fc2ef33333}} 
+\index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!\_right@{\_right}}
+\index{\_right@{\_right}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{\_right}{\_right}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structNode}{Node}}$>$ \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\+\_\+right}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/valentinnkana/\+Documents/\+Advance\+\_\+\+Programing\+\_\+\+Exam/\mbox{\hyperlink{bst_8hpp}{bst.\+hpp}}\end{DoxyCompactItemize}

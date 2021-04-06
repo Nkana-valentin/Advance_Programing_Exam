@@ -1,3 +1,14 @@
+/*!
+ *Lecturer Dr. Alberto Sartori
+ * \author Valentin Nkana
+ * \date April 2021
+ * \mainpage Binary Search Tree
+ * \section intro_sec Introduction
+ * This project was implemented as a final exam for C++ in the course of Advanced Programming.
+ 
+ */
+
+
 #ifndef __BST_HPP
 #define __BST_HPP
 
@@ -9,6 +20,7 @@
 #include<functional>     // std::less
 #include<vector> 
 
+/// Definition and declaration of the object Node
 template<typename K, typename V>
 struct Node{
     std::unique_ptr<Node> _left;

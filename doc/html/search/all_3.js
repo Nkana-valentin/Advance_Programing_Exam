@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_3',['Node',['../struct_node.html',1,'']]]
+  ['difference_5ftype_15',['difference_type',['../classbst_1_1____iterator.html#af340014277c8afc5386b7eaf983c2239',1,'bst::__iterator']]]
 ];
