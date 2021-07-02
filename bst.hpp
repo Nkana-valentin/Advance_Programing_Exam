@@ -1,10 +1,19 @@
 /*!
  *Lecturer Dr. Alberto Sartori
  * \author Valentin Nkana
- * \date April 2021
+ * \date July 2021
  * \mainpage Binary Search Tree
- * \section intro_sec Introduction
- * This project was implemented as a final exam for C++ in the course of Advanced Programming.
+ * \section Introduction
+ *  This project was implemented as a final exam for C++ in the course of Advanced Programming.
+ * \section Compilation
+ * The compilation of the files is done by running the 'make' command; 
+ * use the command 'make clean' to remove object files and executables.
+ * The executable 'benchmark.x' requires an argument from command line 
+ * representing the number of nodes in the tree and std::map : e.g we can run './benchmark.o 50' 
+ * will run the tests for a tree and std::map with 50 nodes of (random int keys and int values). 
+ * The corresponding output will be three sets of 11 time measurements for the find() 
+ * method (for unbalanced tree, balanced tree, std::map each).
+ 
  
  */
 
@@ -392,8 +401,6 @@ public:
 
     std::pair<iterator, bool> insert(std::pair<const K, V> &&data);
 
-    //void erase(const K &x);
-
     template <typename... Types>
     std::pair<iterator, bool> emplace(Types &&...args);
 
@@ -627,8 +634,14 @@ private:
     //Node<K, V> current;
 
 public:
+    /**
+     * @brief Custom constructor for @ref iterator
+     * @param x Raw pointer to a @ref Node
+     *
+     * Construct a new @ref __iterator that refers to @ref Node x
+     */
     explicit __iterator(Node<K, V> *x) noexcept : current{x} {}
-    //template <typename K, typename V, typename C>
+
     friend class bst;
     using value_type = O; // the typename of the iterator
     using difference_type = std::ptrdiff_t;
@@ -636,6 +649,23 @@ public:
     using reference = value_type &;
     using pointer = value_type *;
 
+    /**
+     * @brief Default-generated constructor
+     *
+     */
+    __iterator() noexcept = default;
+
+    /**
+     * @brief Default-generated destructor
+     *
+     */
+    ~__iterator() = default;
+
+    /**
+     * @brief Dereference operator
+     *
+     * Dereferences an @ref __iterator by returning the data stored by the @ref Node it refers to
+     */
     reference operator*() const noexcept { return current->_data; } // return 0 reference
     pointer operator->() const noexcept { return &(*(*this)); }
 
