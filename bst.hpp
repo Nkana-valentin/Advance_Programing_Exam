@@ -62,6 +62,8 @@ struct Node
         if (pn->_left)
         {
             _left = std::make_unique<Node>(pn->_left, this);
+            // make_unique is carefully implemented
+            //for exception safety and is recommended over directly calling unique_ptr constructors.
             //_left->_parent = this;
         }
         if (pn->_right)
@@ -145,13 +147,13 @@ public:
     explicit bst(const bst &tree) : comp{tree.comp}
     {
         if (tree._root)
-            _root = std::make_unique<Node<K, V>>(tree._root, nullptr);
+            _root = std::make_unique<Node<K, V>>(tree._root, nullptr); // make_unique for exception safety
 
         //_root = std::unique_ptr<Node<K, V>>(new Node<K, V>(tree._root, nullptr));
     }
 
-    bst &operator=(bst &tree)
-    {
+    bst &operator=(bst &&tree)
+    { // move assignment constructor
         _root.reset();
         auto tmp{tree};
         *this = std::move(tmp);
@@ -622,8 +624,8 @@ V &bst<K, V, C>::operator[](T &&key)
     }
 }
 
-/// Iterator definition of the class bst
-//struct Node;
+/// Iterator definition of the class bst:
+//are used to reduced the complexity and the execution time of a program.
 
 template <typename K, typename V, typename C>
 template <typename O>
@@ -667,6 +669,7 @@ public:
      * Dereferences an @ref __iterator by returning the data stored by the @ref Node it refers to
      */
     reference operator*() const noexcept { return current->_data; } // return 0 reference
+
     pointer operator->() const noexcept { return &(*(*this)); }
 
     friend bool operator==(const __iterator &a, const __iterator &b)
