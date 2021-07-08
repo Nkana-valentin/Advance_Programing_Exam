@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['emplace_50',['emplace',['../classbst.html#ae6dba1d61e0177e4785d098530e1715e',1,'bst::emplace(Types &amp;&amp;... args)'],['../classbst.html#ae5a0a318cfc764a86de1d5635b88812f',1,'bst::emplace(Types &amp;&amp;... args)']]],
-  ['end_51',['end',['../classbst.html#afbb7e94692c997536dbbbaf4ba967fad',1,'bst::end() noexcept'],['../classbst.html#ac00bd613492e7a0018a78e17849403a7',1,'bst::end() const noexcept']]]
+  ['emplace_58',['emplace',['../classbst.html#a9e214ac8416865f7beb6f91acf050e04',1,'bst::emplace(Types &amp;&amp;...args)'],['../classbst.html#adc1b45254f3df6c5cf6004b7d6a03bb3',1,'bst::emplace(Types &amp;&amp;...args)']]],
+  ['end_59',['end',['../classbst.html#afbb7e94692c997536dbbbaf4ba967fad',1,'bst::end() noexcept'],['../classbst.html#ac00bd613492e7a0018a78e17849403a7',1,'bst::end() const noexcept']]],
+  ['erase_60',['erase',['../classbst.html#a37b5b94f7edd10dd3e98d0e125175386',1,'bst']]]
 ];

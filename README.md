@@ -16,6 +16,8 @@ I have uploaded the forthcoming files:
 
 7) "timing.png" and "timing_small.png" generated with the scripts.
 
+8) "test_bst_tree.cpp" which allow us to test if our bst works as we expected
+
 
 ### How to compile and run the benckmark
 

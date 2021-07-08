@@ -6,4 +6,6 @@ digraph "/home/valentinnkana/Documents/Advance_Programing_Exam/bst.hpp"
   Node1 [label="/home/valentinnkana\l/Documents/Advance_Programing\l_Exam/bst.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="/home/valentinnkana\l/Documents/Advance_Programing\l_Exam/benchmark.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$benchmark_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/valentinnkana\l/Documents/Advance_Programing\l_Exam/test_bst_tree.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__bst__tree_8cpp.html",tooltip=" "];
 }

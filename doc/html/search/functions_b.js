@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_63',['value',['../structNode.html#acae3ee9fb629cc87e188a98a88ab9c7d',1,'Node']]]
+  ['root_73',['root',['../classbst.html#a210e89344ef32f01e59eb6dc3c38f1fd',1,'bst']]]
 ];
