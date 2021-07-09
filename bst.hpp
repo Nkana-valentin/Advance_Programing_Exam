@@ -152,8 +152,8 @@ public:
         //_root = std::unique_ptr<Node<K, V>>(new Node<K, V>(tree._root, nullptr));
     }
 
-    bst &operator=(bst &&tree)
-    { // move assignment constructor
+    bst &operator=(bst &tree)
+    {
         _root.reset();
         auto tmp{tree};
         *this = std::move(tmp);
@@ -427,7 +427,7 @@ template <typename K, typename V, typename C>
 void bst<K, V, C>::fill_tree(std::vector<std::pair<const K, V>> &vec, int begin, int end)
 {
 
-    insert(vec[(begin + end) / 2]);
+    insert(vec[static_cast<int>((begin + end) / 2)]); // performing a static cast operation.
 
     if (begin >= end)
         return;
