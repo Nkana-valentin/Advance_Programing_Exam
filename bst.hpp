@@ -577,15 +577,15 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(std::pair<
     }
     auto p = _root.get();
 
-    bool go_left;
-    bool go_right;
+    //bool go_left;
+    //bool go_right;
 
     while (true)
     {
-        go_right = comp(p->_data.first, data.first);
-        go_left = comp(data.first, p->_data.first);
+        //go_right = comp(p->_data.first, data.first);
+        //go_left = comp(data.first, p->_data.first);
 
-        if (go_right)
+        if (comp(p->_data.first, data.first))
         {
 
             if (p->_right)
@@ -600,7 +600,7 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(std::pair<
             }
         }
 
-        else if (go_left)
+        else if (comp(data.first, p->_data.first))
         {
 
             if (p->_left)
@@ -745,10 +745,10 @@ public:
         return tmp;
     }
 
-    /* void print_iterator()
+    void print_iterator()
     {
         current->to_print();
-    } */
+    }
 };
 
 #endif

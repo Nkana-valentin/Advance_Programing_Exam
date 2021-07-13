@@ -77,7 +77,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    catch (...)
+    catch (...) // to call all the exceptions
     {
 
         std::cerr << "Unknown exception occurred" << '\n';

@@ -1,0 +1,187 @@
+\begin{theindex}
+
+  \item {/home/valentinnkana/Documents/Advance\_Programing\_Exam/benchmark.cpp}, 
+		\hyperpage{21}
+  \item {/home/valentinnkana/Documents/Advance\_Programing\_Exam/bst.hpp}, 
+		\hyperpage{21}
+  \item {/home/valentinnkana/Documents/Advance\_Programing\_Exam/test\_bst\_tree.cpp}, 
+		\hyperpage{22}
+  \item {\_\_iterator}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{9}
+  \item {\_data}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+  \item {\_left}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+  \item {\_parent}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+  \item {\_right}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+  \item {$\sim$Node}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{19}
+  \item {$\sim$\_\_iterator}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{9}
+
+  \indexspace
+
+  \item {balance}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{13}
+  \item {begin}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{14}
+  \item {bst}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{13}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{11}
+  \item {bst$<$ K, V, C $>$}, \hyperpage{11}
+    \subitem {balance}, \hyperpage{13}
+    \subitem {begin}, \hyperpage{14}
+    \subitem {bst}, \hyperpage{13}
+    \subitem {cbegin}, \hyperpage{14}
+    \subitem {cend}, \hyperpage{14}
+    \subitem {clear}, \hyperpage{14}
+    \subitem {const\_iterator}, \hyperpage{13}
+    \subitem {emplace}, \hyperpage{14}
+    \subitem {end}, \hyperpage{15}
+    \subitem {erase}, \hyperpage{15}
+    \subitem {find}, \hyperpage{15}
+    \subitem {insert}, \hyperpage{15, 16}
+    \subitem {is\_balanced}, \hyperpage{16}
+    \subitem {iterator}, \hyperpage{13}
+    \subitem {operator$<$$<$}, \hyperpage{17}
+    \subitem {operator=}, \hyperpage{16}
+    \subitem {operator[]}, \hyperpage{16}
+    \subitem {root}, \hyperpage{16}
+  \item {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{7}
+    \subitem {\_\_iterator}, \hyperpage{9}
+    \subitem {$\sim$\_\_iterator}, \hyperpage{9}
+    \subitem {bst}, \hyperpage{11}
+    \subitem {difference\_type}, \hyperpage{8}
+    \subitem {iterator\_category}, \hyperpage{8}
+    \subitem {operator!=}, \hyperpage{11}
+    \subitem {operator$\ast$}, \hyperpage{9}
+    \subitem {operator++}, \hyperpage{10}
+    \subitem {operator-\/$>$}, \hyperpage{10}
+    \subitem {operator==}, \hyperpage{11}
+    \subitem {pointer}, \hyperpage{8}
+    \subitem {print\_iterator}, \hyperpage{10}
+    \subitem {reference}, \hyperpage{8}
+    \subitem {value\_type}, \hyperpage{8}
+
+  \indexspace
+
+  \item {cbegin}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{14}
+  \item {cend}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{14}
+  \item {clear}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{14}
+  \item {const\_iterator}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{13}
+
+  \indexspace
+
+  \item {difference\_type}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{8}
+
+  \indexspace
+
+  \item {emplace}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{14}
+  \item {end}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{15}
+  \item {erase}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{15}
+
+  \indexspace
+
+  \item {find}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{15}
+
+  \indexspace
+
+  \item {insert}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{15, 16}
+  \item {is\_balanced}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{16}
+  \item {iterator}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{13}
+  \item {iterator\_category}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{8}
+
+  \indexspace
+
+  \item {key}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+
+  \indexspace
+
+  \item {main}
+    \subitem {test\_bst\_tree.cpp}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Node}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{18, 19}
+  \item {Node$<$ K, V $>$}, \hyperpage{17}
+    \subitem {\_data}, \hyperpage{20}
+    \subitem {\_left}, \hyperpage{20}
+    \subitem {\_parent}, \hyperpage{20}
+    \subitem {\_right}, \hyperpage{20}
+    \subitem {$\sim$Node}, \hyperpage{19}
+    \subitem {key}, \hyperpage{20}
+    \subitem {Node}, \hyperpage{18, 19}
+    \subitem {to\_print}, \hyperpage{20}
+    \subitem {value}, \hyperpage{20}
+
+  \indexspace
+
+  \item {operator!=}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{11}
+  \item {operator$<$$<$}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{17}
+  \item {operator$\ast$}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{9}
+  \item {operator++}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{10}
+  \item {operator-\/$>$}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{10}
+  \item {operator=}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{16}
+  \item {operator==}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{11}
+  \item {operator[]}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{16}
+
+  \indexspace
+
+  \item {pointer}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{8}
+  \item {print\_iterator}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, 
+		\hyperpage{10}
+
+  \indexspace
+
+  \item {reference}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{8}
+  \item {root}
+    \subitem {bst$<$ K, V, C $>$}, \hyperpage{16}
+
+  \indexspace
+
+  \item {test\_bst\_tree.cpp}
+    \subitem {main}, \hyperpage{22}
+  \item {to\_print}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+
+  \indexspace
+
+  \item {value}
+    \subitem {Node$<$ K, V $>$}, \hyperpage{20}
+  \item {value\_type}
+    \subitem {bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}, \hyperpage{8}
+
+\end{theindex}
