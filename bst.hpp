@@ -34,25 +34,32 @@ struct Node
 {
     std::unique_ptr<Node> _left;
     std::unique_ptr<Node> _right;
-    Node *_parent;
+    Node *_parent; // because two children could have a same parent
     std::pair<const K, V> _data;
 
     // copy constructor
 
-    Node(const std::pair<const K, V> &data, Node<K, V> *left, Node<K, V> *right, Node<K, V> *parent) noexcept : _left{left}, _right{right}, _parent{parent}, _data{data} {}
+    /**
+     * @brief Construct a new Node object with l-value reference
+     */
 
-    explicit Node(const std::pair<const K, V> &data) noexcept : _left{}, _right{}, _parent{}, _data{data} {}
+    Node(const std::pair<const K, V> &data, Node<K, V> *left, Node<K, V> *right, Node<K, V> *parent) : _left{left}, _right{right}, _parent{parent}, _data{data} {}
 
-    Node(const std::pair<const K, V> &data, Node<K, V> *parent) noexcept : _left{}, _right{}, _parent{parent}, _data{data} {}
+    explicit Node(const std::pair<const K, V> &data) : _left{}, _right{}, _parent{}, _data{data} {}
+
+    Node(const std::pair<const K, V> &data, Node<K, V> *parent) : _left{}, _right{}, _parent{parent}, _data{data} {}
 
     Node() = default;
+    ~Node() noexcept = default;
 
-    // move assignment constructor
+    // move constructor
+
+    /**
+     * @brief Construct a new Node object with r-value reference 
+     */
     Node(std::pair<const K, V> &&data, Node<K, V> *left, Node<K, V> *right, Node<K, V> *parent) noexcept : _left{left}, _right{right}, _parent{parent}, _data{std::move(data)} {}
 
     Node(std::pair<const K, V> &&data) noexcept : _left{nullptr}, _right{nullptr}, _parent{nullptr}, _data{std::move(data)} {}
-
-    ~Node() = default;
 
     Node(std::pair<const K, V> &&data, Node<K, V> *parent) noexcept : _left{nullptr}, _right{nullptr}, _parent{parent}, _data{std::move(data)} {}
 
@@ -75,7 +82,7 @@ struct Node
     const K key() noexcept { return _data.first; }
     V value() noexcept { return _data.second; }
 
-    void to_print()
+    void to_print() noexcept
     {
 
         std::cout << "Node has value: " << _data.second << "\n";
@@ -93,9 +100,13 @@ struct Node
         }
     }
 };
-// end of the struct Node declaration and definition
+// end of the struct Node declaration and definition.
 
-/// declaration of the members and methods of bst class
+/**
+ * @brief Declaration of the members and methods of bst class
+ * 
+ */
+
 template <typename K, typename V, typename C = std::less<K>>
 class bst
 {
@@ -105,7 +116,7 @@ private:
 
     void fill_tree(std::vector<std::pair<const K, V>> &vec, int begin, int end);
 
-    int get_height(Node<K, V> *ptn)
+    int get_height(Node<K, V> *ptn) noexcept
     {
 
         if (!ptn)
@@ -114,7 +125,7 @@ private:
         return 1 + std::max(get_height(ptn->_left.get()), get_height(ptn->_right.get()));
     }
 
-    bool balance_tree_check(Node<K, V> *root_node)
+    bool balance_tree_check(Node<K, V> *root_node) // maybe could be marked noexcept
     {
 
         if (!root_node)
@@ -130,10 +141,13 @@ private:
     }
 
 public:
-    bst() : _root{nullptr} {}
+    //bst() : _root{nullptr} {} // maybe use the default ctor;
+    bst() = default;
+    ~bst() noexcept = default; // all destructors should be marked noexcept
 
     bst(bst &&tree) noexcept : comp{std::move(tree.comp)}, _root{std::move(tree._root)} {}
 
+    // move assignment
     bst &operator=(bst &&tree) noexcept
     {
 
@@ -144,23 +158,27 @@ public:
     }
 
     // copy constructor
-    explicit bst(const bst &tree) : comp{tree.comp}
+    explicit bst(const bst &tree) noexcept : comp{tree.comp} // I am acquiring no resources
     {
         if (tree._root)
-            _root = std::make_unique<Node<K, V>>(tree._root, nullptr); // make_unique for exception safety
+            _root = std::make_unique<Node<K, V>>(tree._root, nullptr);
+        // make_unique for exception safety: make unique is a function
 
         //_root = std::unique_ptr<Node<K, V>>(new Node<K, V>(tree._root, nullptr));
     }
-
+    // copy assignment: to avoid code duplication: deep copy
     bst &operator=(bst &tree)
     {
-        _root.reset();
+        _root.reset(); // clean my memory first.
         auto tmp{tree};
         *this = std::move(tmp);
         return *this;
     }
 
-    Node<K, V> *root() noexcept { return _root.get(); }
+    Node<K, V> *root() noexcept
+    {
+        return _root.get();
+    }
 
     void clear() noexcept // to destroy the object currently managed by the unique_ptr(if any) and takes the ownership of p.
     {
@@ -208,7 +226,7 @@ public:
 
                 // two children in this case
                 auto succ = (++it).current;
-                auto DN = std::unique_ptr<Node<K, V>>(new Node<K, V>(succ->_data, nullptr));
+                auto DN = std::unique_ptr<Node<K, V>>(new Node<K, V>{succ->_data, nullptr});
                 DN->_left.reset(loc->_left.release());
                 DN->_left->_parent = DN.get();
                 if (succ == loc->_right.get())
@@ -306,8 +324,9 @@ public:
                 if (succ != loc->_right.get())
                 {
 
-                    auto DNP{loc->_parent};
+                    auto DNP{loc->_parent}; // DNP := the pointer to the parent of the node to be deleted
                     auto DN{std::unique_ptr<Node<K, V>>(new Node<K, V>(succ->_data, DNP))};
+                    // DN := the unique pointer to the newly created node which contains the successor's data
                     erase(succ->_data.first);
 
                     DN->_left.reset(loc->_left.release());
@@ -338,7 +357,7 @@ public:
     }
 
     template <typename T>
-    V &operator[](T &&key);
+    V &operator[](T &&key) noexcept; // declaration of the subscripting op
 
     template <typename O>
     class __iterator;
@@ -348,14 +367,13 @@ public:
 
     iterator begin() noexcept
     {
-        auto p = _root.get();
-        if (!p)
-            return iterator(p);
+        //auto p = _root.get();
+        if (!_root)
+            return iterator{nullptr};
 
-        while (p->_left)
-        {                         // p->_left access requires p!=nullptr or segmentation fault
+        auto p{_root.get()};
+        while (p->_left)          // p->_left access requires p!=nullptr or segmentation fault
             p = (p->_left).get(); // would otherwise dereference nullptr
-        }
         return iterator{p};
     }
     iterator end() noexcept
@@ -365,9 +383,10 @@ public:
 
     const_iterator begin() const noexcept
     {
-        auto p = _root.get();
-        if (!p)
-            return const_iterator(p);
+
+        if (!_root)
+            return const_iterator{nullptr};
+        auto p{_root.get()};
         while (p->_left)
             p = (p->_left).get();
         return const_iterator{p};
@@ -380,9 +399,10 @@ public:
 
     const_iterator cbegin() const noexcept
     {
-        auto p = _root.get();
-        if (!p)
-            return const_iterator(p);
+        //auto p = _root.get();
+        if (!_root)
+            return const_iterator{nullptr};
+        auto p{_root.get()};
         while (p->_left)
         {
             p = (p->_left).get();
@@ -415,14 +435,17 @@ public:
 
     void balance();
 
-    bool is_balanced()
+    bool is_balanced() noexcept
     {
 
         return balance_tree_check(_root.get());
     }
 }; // end of the  bst class declaration
 
-// Begin of the definition the members of the class bst
+/**
+ * @brief Beginning of the definition of  the members of the class bst
+ */
+
 template <typename K, typename V, typename C>
 void bst<K, V, C>::fill_tree(std::vector<std::pair<const K, V>> &vec, int begin, int end)
 {
@@ -452,24 +475,24 @@ void bst<K, V, C>::balance()
 }
 
 template <typename K, typename V, typename C>
-typename bst<K, V, C>::iterator bst<K, V, C>::find(const K &key)
+typename bst<K, V, C>::iterator bst<K, V, C>::find(const K &key) // must be marked noexcept
 {
 
-    auto p = _root.get();
-    bool go_left;
-    bool go_right;
+    auto p{_root.get()};
+    //bool go_left;
+    //bool go_right;
 
     while (p)
     {
-        go_right = comp(p->_data.first, key);
-        go_left = comp(key, p->_data.first);
+        // go_right = comp(p->_data.first, key);
+        //go_left = comp(key, p->_data.first);
 
-        if (go_right)
+        if (comp(p->_data.first, key))
             p = (p->_right).get();
-        else if (go_left)
+        else if (comp(key, p->_data.first))
             p = (p->_left).get();
         else
-            return iterator(p);
+            return iterator(p); // or iterator{p}
     }
 
     return end();
@@ -479,19 +502,19 @@ template <typename K, typename V, typename C>
 typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K &key) const
 {
 
-    auto p = _root.get();
-    bool go_left;
-    bool go_right;
+    auto p{_root.get()};
+    //bool go_left;
+    //bool go_right;
 
     while (p)
     {
 
-        go_right = comp(p->_data.first, key);
-        go_left = comp(key, p->_data.first);
+        //go_right = comp(p->_data.first, key);
+        //go_left = comp(key, p->_data.first);
 
-        if (go_right)
+        if (comp(p->_data.first, key))
             p = (p->_right).get();
-        else if (go_left)
+        else if (comp(key, p->_data.first))
             p = (p->_left).get();
         else
             return iterator(p);
@@ -609,7 +632,7 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::emplace(Types &&.
 /// Overloadding of the operator []
 template <typename K, typename V, typename C>
 template <typename T>
-V &bst<K, V, C>::operator[](T &&key)
+V &bst<K, V, C>::operator[](T &&key) noexcept
 {
 
     auto p = find(std::forward<T>(key));
@@ -722,10 +745,10 @@ public:
         return tmp;
     }
 
-    void print_iterator()
+    /* void print_iterator()
     {
         current->to_print();
-    }
+    } */
 };
 
 #endif
