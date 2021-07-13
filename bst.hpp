@@ -415,9 +415,9 @@ public:
         return const_iterator{nullptr};
     }
 
-    iterator find(const K &key);
+    iterator find(const K &key) noexcept;
 
-    const_iterator find(const K &key) const;
+    const_iterator find(const K &key) const noexcept;
 
     std::pair<iterator, bool> insert(const std::pair<const K, V> &data);
 
@@ -475,7 +475,7 @@ void bst<K, V, C>::balance()
 }
 
 template <typename K, typename V, typename C>
-typename bst<K, V, C>::iterator bst<K, V, C>::find(const K &key) // must be marked noexcept
+typename bst<K, V, C>::iterator bst<K, V, C>::find(const K &key) noexcept // must be marked noexcept
 {
 
     auto p{_root.get()};
@@ -499,7 +499,7 @@ typename bst<K, V, C>::iterator bst<K, V, C>::find(const K &key) // must be mark
 }
 /// To find an node inside the binary tree
 template <typename K, typename V, typename C>
-typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K &key) const
+typename bst<K, V, C>::const_iterator bst<K, V, C>::find(const K &key) const noexcept
 {
 
     auto p{_root.get()};
@@ -532,16 +532,16 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std:
         _root.reset(new Node<K, V>{data, nullptr});
         return std::make_pair(iterator(_root.get()), true);
     }
-    auto p = _root.get();
-    bool go_left;
-    bool go_right;
+    auto p{_root.get()};
+    //bool go_left;
+    //bool go_right;
 
     while (true)
     {
 
-        go_right = comp(p->_data.first, data.first);
-        go_left = comp(data.first, p->_data.first);
-        if (go_right)
+        //go_right = comp(p->_data.first, data.first);
+        //go_left = comp(data.first, p->_data.first);
+        if (comp(p->_data.first, data.first))
         {
             if (p->_right)
                 p = (p->_right).get();
@@ -552,7 +552,7 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std:
                 return std::make_pair(iterator(p->_right.get()), true);
             }
         }
-        else if (go_left)
+        else if (comp(data.first, p->_data.first))
         {
             if (p->_left)
                 p = (p->_left).get();
