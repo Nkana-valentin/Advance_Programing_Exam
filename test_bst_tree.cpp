@@ -250,5 +250,26 @@ int main()
         std::cerr << "Unknown key" << '\n';
     }
 
-    return 1;
+    std::cout << "example of another tree where the successor has  a right child with emplace"
+              << "\n";
+    bst<int, int> tree_for_test{};
+    auto test1{tree_for_test.emplace(8, 8)};
+    auto test2{tree_for_test.emplace(3, 3)};
+    auto test3{tree_for_test.emplace(1, 1)};
+    auto test4{tree_for_test.emplace(6, 6)};
+    auto test5{tree_for_test.emplace(21, 21)};
+    auto test6{tree_for_test.emplace(9, 9)};
+    auto test7{tree_for_test.emplace(10, 10)}; // succ of key 9
+    std::cout << "The new tree is: " << tree_for_test << "\n";
+    std::cout << "Case of two children and successor is not the next one with the right child"
+              << "\n";
+    tree_for_test.erase(8);
+
+    std::cout << "After removing a key 8 which is the head node: the tree becomes \n"
+              << tree_for_test << std::endl;
+
+    rand_tree.clear();
+    std::cout << rand_tree << "\n";
+
+    return 0;
 }
