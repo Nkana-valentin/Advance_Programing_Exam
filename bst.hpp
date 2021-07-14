@@ -145,7 +145,9 @@ public:
     bst() = default;
     ~bst() noexcept = default; // all destructors should be marked noexcept
 
-    bst(bst &&tree) noexcept : comp{std::move(tree.comp)}, _root{std::move(tree._root)} {}
+    // move semantics
+    bst(bst &&tree) noexcept = default; // because we have a unique_ptr
+    //bst(bst &&tree) noexcept : comp{std::move(tree.comp)}, _root{std::move(tree._root)} {}
 
     // move assignment
     bst &operator=(bst &&tree) noexcept
@@ -527,7 +529,7 @@ template <typename K, typename V, typename C>
 std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::insert(const std::pair<const K, V> &data)
 {
 
-    if (_root == nullptr)
+    if (_root == nullptr) // or if(!_root)
     {
         _root.reset(new Node<K, V>{data, nullptr});
         return std::make_pair(iterator(_root.get()), true);
