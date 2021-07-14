@@ -150,14 +150,15 @@ public:
     //bst(bst &&tree) noexcept : comp{std::move(tree.comp)}, _root{std::move(tree._root)} {}
 
     // move assignment
-    bst &operator=(bst &&tree) noexcept
+    bst &operator=(bst &&tree) noexcept = default;
+    /* bst &operator=(bst &&tree) noexcept
     {
 
         comp = std::move(tree.comp);
         _root = std::move(tree._root);
 
         return *this;
-    }
+    } */
 
     // copy constructor
     explicit bst(const bst &tree) noexcept : comp{tree.comp} // I am acquiring no resources
