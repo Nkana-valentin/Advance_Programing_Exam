@@ -140,6 +140,18 @@ private:
         return false;
     }
 
+    /*    iterator _begin() const
+    {
+        //auto p = _root.get();
+        if (!_root)
+            return iterator{nullptr};
+
+        auto p{_root.get()};
+        while (p->_left)          // p->_left access requires p!=nullptr or segmentation fault
+            p = (p->_left).get(); // would otherwise dereference nullptr
+        return iterator{p};
+    } */
+
 public:
     //bst() : _root{nullptr} {} // maybe use the default ctor;
     bst() = default;
@@ -229,7 +241,7 @@ public:
 
                 // two children in this case
                 auto succ = (++it).current;
-                auto DN = std::unique_ptr<Node<K, V>>(new Node<K, V>{succ->_data, nullptr});
+                auto DN = std::unique_ptr<Node<K, V>>(new Node<K, V>{succ->_data, nullptr}); // we can use make_unique?
                 DN->_left.reset(loc->_left.release());
                 DN->_left->_parent = DN.get();
                 if (succ == loc->_right.get())
@@ -379,6 +391,11 @@ public:
             p = (p->_left).get(); // would otherwise dereference nullptr
         return iterator{p};
     }
+
+    /* iterator begin() noexcept
+    {
+        return iterator(_begin());
+    } */
     iterator end() noexcept
     {
         return iterator{nullptr};
@@ -394,6 +411,11 @@ public:
             p = (p->_left).get();
         return const_iterator{p};
     }
+
+    /* const_iterator cbegin() const noexcept
+    {
+        return const_iterator(_begin());
+    } */
 
     const_iterator end() const noexcept
     {
