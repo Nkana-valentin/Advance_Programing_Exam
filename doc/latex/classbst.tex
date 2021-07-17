@@ -2,7 +2,7 @@
 \label{classbst}\index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 
 
-declaration of the members and methods of bst class  
+Declaration of the members and methods of bst class.  
 
 
 
@@ -24,13 +24,15 @@ using \mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+it
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classbst_a5002d1df548836da9c122616b2efba3c}{bst}} ()
+\mbox{\hyperlink{classbst_a4a6e8912494782c2a20741d5c8a7b768}{bst}} ()=default
 \item 
-\mbox{\hyperlink{classbst_afd5302cd299641ce258bb67fff2db862}{bst}} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept
+\mbox{\hyperlink{classbst_a30d4ed54517f291732187da3636feaac}{$\sim$bst}} () noexcept=default
 \item 
-\mbox{\hyperlink{classbst}{bst}} \& \mbox{\hyperlink{classbst_a2ad4614f1c1a9d6d601e78c4a62fc2bf}{operator=}} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept
+\mbox{\hyperlink{classbst_ade2639d2473253f2f3d28096b7a4b901}{bst}} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept=default
 \item 
-\mbox{\hyperlink{classbst_a349a2c333e9fd9a9884427416bc8485b}{bst}} (const \mbox{\hyperlink{classbst}{bst}} \&tree)
+\mbox{\hyperlink{classbst}{bst}} \& \mbox{\hyperlink{classbst_a62ad4766ba5a47bfb2bdfd79f5cd468e}{operator=}} (\mbox{\hyperlink{classbst}{bst}} \&\&tree) noexcept=default
+\item 
+\mbox{\hyperlink{classbst_ad513ea16bc67684104602c53fd505f4e}{bst}} (const \mbox{\hyperlink{classbst}{bst}} \&tree) noexcept
 \item 
 \mbox{\hyperlink{classbst}{bst}} \& \mbox{\hyperlink{classbst_a75a856b6ab9d892259434be61319248a}{operator=}} (\mbox{\hyperlink{classbst}{bst}} \&tree)
 \item 
@@ -40,7 +42,7 @@ void \mbox{\hyperlink{classbst_a65068da5e20b8c4b37b3bbda23ad8320}{clear}} () noe
 \item 
 void \mbox{\hyperlink{classbst_a37b5b94f7edd10dd3e98d0e125175386}{erase}} (const K \&x)
 \item 
-{\footnotesize template$<$typename T $>$ }\\V \& \mbox{\hyperlink{classbst_ad8191868104d497e931df0fe046baa9c}{operator\mbox{[}$\,$\mbox{]}}} (T \&\&key)
+{\footnotesize template$<$typename T $>$ }\\V \& \mbox{\hyperlink{classbst_a7ce3f5dc8ad18cdee1da313755282885}{operator\mbox{[}$\,$\mbox{]}}} (T \&\&key) noexcept
 \begin{DoxyCompactList}\small\item\em Overloadding of the operator \mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}} \mbox{\hyperlink{classbst_aa266a01931f0f409b57271365654c46e}{begin}} () noexcept
 \item 
@@ -54,9 +56,9 @@ void \mbox{\hyperlink{classbst_a37b5b94f7edd10dd3e98d0e125175386}{erase}} (const
 \item 
 \mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+iterator}} \mbox{\hyperlink{classbst_a1f87b66da48c605c7414ab0769573ecb}{cend}} () const noexcept
 \item 
-\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}} \mbox{\hyperlink{classbst_ae4846708fd2688ce523268b8b6fac4e1}{find}} (const K \&key)
+\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}} \mbox{\hyperlink{classbst_a979e80f7f879e2673251cfa6eddd38e5}{find}} (const K \&key) noexcept
 \item 
-\mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+iterator}} \mbox{\hyperlink{classbst_af37947378c3df26ebfef5fb65af8a274}{find}} (const K \&key) const
+\mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+iterator}} \mbox{\hyperlink{classbst_a270cf249bc76c2afe0796fc8781e80bc}{find}} (const K \&key) const noexcept
 \begin{DoxyCompactList}\small\item\em To find an node inside the binary tree. \end{DoxyCompactList}\item 
 std\+::pair$<$ \mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}}, bool $>$ \mbox{\hyperlink{classbst_abde6f8b8460355f83eaace4aa4cc1102}{insert}} (const std\+::pair$<$ const K, V $>$ \&data)
 \begin{DoxyCompactList}\small\item\em To insert a node inside the bst first version. \end{DoxyCompactList}\item 
@@ -66,7 +68,7 @@ std\+::pair$<$ \mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iter
 \item 
 void \mbox{\hyperlink{classbst_a7f19b323c658e473765b07ab4358ae44}{balance}} ()
 \item 
-bool \mbox{\hyperlink{classbst_ad98396e94ab1e2ce59400c56056d83fe}{is\+\_\+balanced}} ()
+bool \mbox{\hyperlink{classbst_a80a94ce7106bb27b69ffebd9ed8e54d7}{is\+\_\+balanced}} () noexcept
 \item 
 {\footnotesize template$<$typename... Types$>$ }\\std\+::pair$<$ typename \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}}, bool $>$ \mbox{\hyperlink{classbst_adc1b45254f3df6c5cf6004b7d6a03bb3}{emplace}} (Types \&\&...args)
 \begin{DoxyCompactList}\small\item\em definition of the emplace method \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -81,7 +83,9 @@ std\+::ostream \& \mbox{\hyperlink{classbst_a5982673298cbff8b6f97670aae801b93}{o
 \subsubsection*{template$<$typename K, typename V, typename C = std\+::less$<$\+K$>$$>$\newline
 class bst$<$ K, V, C $>$}
 
-declaration of the members and methods of bst class 
+Declaration of the members and methods of bst class. 
+
+
 
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classbst_a7ef9989b16e341584a90bc781ebddf94}\label{classbst_a7ef9989b16e341584a90bc781ebddf94}} 
@@ -101,26 +105,33 @@ using \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classb
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classbst_a5002d1df548836da9c122616b2efba3c}\label{classbst_a5002d1df548836da9c122616b2efba3c}} 
+\mbox{\Hypertarget{classbst_a4a6e8912494782c2a20741d5c8a7b768}\label{classbst_a4a6e8912494782c2a20741d5c8a7b768}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!bst@{bst}}
 \index{bst@{bst}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{bst()}{bst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\mbox{\Hypertarget{classbst_afd5302cd299641ce258bb67fff2db862}\label{classbst_afd5302cd299641ce258bb67fff2db862}} 
+\mbox{\Hypertarget{classbst_a30d4ed54517f291732187da3636feaac}\label{classbst_a30d4ed54517f291732187da3636feaac}} 
+\index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!````~bst@{$\sim$bst}}
+\index{````~bst@{$\sim$bst}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$bst()}{~bst()}}
+{\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::$\sim$\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classbst_ade2639d2473253f2f3d28096b7a4b901}\label{classbst_ade2639d2473253f2f3d28096b7a4b901}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!bst@{bst}}
 \index{bst@{bst}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{bst()}{bst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&\&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&\&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
-\mbox{\Hypertarget{classbst_a349a2c333e9fd9a9884427416bc8485b}\label{classbst_a349a2c333e9fd9a9884427416bc8485b}} 
+\mbox{\Hypertarget{classbst_ad513ea16bc67684104602c53fd505f4e}\label{classbst_ad513ea16bc67684104602c53fd505f4e}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!bst@{bst}}
 \index{bst@{bst}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{bst()}{bst()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst}{bst}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
 
@@ -208,23 +219,23 @@ definition of the emplace method
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
 void \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::erase (\begin{DoxyParamCaption}\item[{const K \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classbst_ae4846708fd2688ce523268b8b6fac4e1}\label{classbst_ae4846708fd2688ce523268b8b6fac4e1}} 
+\mbox{\Hypertarget{classbst_a270cf249bc76c2afe0796fc8781e80bc}\label{classbst_a270cf249bc76c2afe0796fc8781e80bc}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!find@{find}}
 \index{find@{find}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C $>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::find (\begin{DoxyParamCaption}\item[{const K \&}]{key }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classbst_af37947378c3df26ebfef5fb65af8a274}\label{classbst_af37947378c3df26ebfef5fb65af8a274}} 
-\index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!find@{find}}
-\index{find@{find}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename K , typename V , typename C $>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::find (\begin{DoxyParamCaption}\item[{const K \&}]{key }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_a7ef9989b16e341584a90bc781ebddf94}{const\+\_\+iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::find (\begin{DoxyParamCaption}\item[{const K \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
 To find an node inside the binary tree. 
+
+\mbox{\Hypertarget{classbst_a979e80f7f879e2673251cfa6eddd38e5}\label{classbst_a979e80f7f879e2673251cfa6eddd38e5}} 
+\index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!find@{find}}
+\index{find@{find}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V , typename C $>$ \\
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::find (\begin{DoxyParamCaption}\item[{const K \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 \mbox{\Hypertarget{classbst_abde6f8b8460355f83eaace4aa4cc1102}\label{classbst_abde6f8b8460355f83eaace4aa4cc1102}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!insert@{insert}}
@@ -244,19 +255,19 @@ To insert a node inside the bst first version.
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C $>$ \\
 std\+::pair$<$ typename \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}}, bool $>$ \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classbst_ad98396e94ab1e2ce59400c56056d83fe}\label{classbst_ad98396e94ab1e2ce59400c56056d83fe}} 
+\mbox{\Hypertarget{classbst_a80a94ce7106bb27b69ffebd9ed8e54d7}\label{classbst_a80a94ce7106bb27b69ffebd9ed8e54d7}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!is\_balanced@{is\_balanced}}
 \index{is\_balanced@{is\_balanced}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{is\_balanced()}{is\_balanced()}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
-bool \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::is\+\_\+balanced (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::is\+\_\+balanced (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
-\mbox{\Hypertarget{classbst_a2ad4614f1c1a9d6d601e78c4a62fc2bf}\label{classbst_a2ad4614f1c1a9d6d601e78c4a62fc2bf}} 
+\mbox{\Hypertarget{classbst_a62ad4766ba5a47bfb2bdfd79f5cd468e}\label{classbst_a62ad4766ba5a47bfb2bdfd79f5cd468e}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
-\mbox{\hyperlink{classbst}{bst}}\& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&\&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{classbst}{bst}}\& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&\&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
 \mbox{\Hypertarget{classbst_a75a856b6ab9d892259434be61319248a}\label{classbst_a75a856b6ab9d892259434be61319248a}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!operator=@{operator=}}
@@ -265,13 +276,13 @@ bool \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::is\+\_\+balanced (\begin
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
 \mbox{\hyperlink{classbst}{bst}}\& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$ \&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{classbst_ad8191868104d497e931df0fe046baa9c}\label{classbst_ad8191868104d497e931df0fe046baa9c}} 
+\mbox{\Hypertarget{classbst_a7ce3f5dc8ad18cdee1da313755282885}\label{classbst_a7ce3f5dc8ad18cdee1da313755282885}} 
 \index{bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!bst$<$ K, V, C $>$@{bst$<$ K, V, C $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C $>$ \\
 template$<$typename T $>$ \\
-V \& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{T \&\&}]{key }\end{DoxyParamCaption})}
+V \& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{T \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 

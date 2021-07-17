@@ -1,5 +1,6 @@
 var searchData=
 [
   ['_7e_5f_5fiterator_43',['~__iterator',['../classbst_1_1____iterator.html#a94d95197410f6849accd6c70fd2d299d',1,'bst::__iterator']]],
-  ['_7enode_44',['~Node',['../structNode.html#a368e2e6bd714376fb7e4bde76661619b',1,'Node']]]
+  ['_7ebst_44',['~bst',['../classbst.html#a30d4ed54517f291732187da3636feaac',1,'bst']]],
+  ['_7enode_45',['~Node',['../structNode.html#a39335389b531d8ef8ef0c077cbae140c',1,'Node']]]
 ];

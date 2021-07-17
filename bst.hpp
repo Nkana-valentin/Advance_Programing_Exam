@@ -194,7 +194,7 @@ public:
         auto it{find(x)};
         Node<K, V> *loc{it.current};
         if (!(it).current)
-            throw("Couldn't find the a Node with the key = x");
+            throw("Couldn't find the Node with the key = x");
 
         if (loc == _root.get())
         {
