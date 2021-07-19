@@ -191,7 +191,7 @@ public:
         return *this;
     }
 
-    Node<K, V> *root() noexcept { return _root.get(); }
+    Node<K, V> *root() noexcept { return _root.get(); } // to be able to acess the root of the bst
 
     void clear() noexcept // to destroy the object currently managed by the unique_ptr(if any) and takes the ownership of p.
     {
@@ -685,7 +685,7 @@ public:
      *
      * Construct a new @ref __iterator that refers to @ref Node x
      */
-    explicit __iterator(Node<K, V> *x) noexcept : current{x} {} // it ctor
+    explicit __iterator(Node<K, V> *x) noexcept : current{x} {} // it ctor  to avoid the implicit conversion
 
     friend class bst;
     using value_type = O; // the typename of the iterator
@@ -728,7 +728,7 @@ public:
     }
 
     __iterator &operator++() noexcept
-    { //pre increment
+    { //pre increment op
 
         auto current_right = current->_right.get();
         auto current_parent = current->_parent;
