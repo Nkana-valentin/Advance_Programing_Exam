@@ -372,17 +372,12 @@ public:
     template <typename T>
     V &operator[](T &&key) noexcept; // declaration of the subscripting op
 
-    template <typename O>
+    template <typename O> // declaration of the class iterator
     class __iterator;
 
     using iterator = __iterator<std::pair<const K, V>>;
     using const_iterator = __iterator<const std::pair<const K, V>>;
 
-    /* IT template <typename IT>
-    IT begin() noexcept;
-    IT begin() const noexcept;
-
-    IT template <typename IT> */
     iterator begin() noexcept
     {
 
@@ -457,15 +452,6 @@ public:
     {
         return cmp(a, b);
     } */
-
-    template <typename A>
-    struct my_comp
-    {
-        bool fun(const A &a, const A &b)
-        {
-            return a < b;
-        }
-    };
 
     void balance();
 
@@ -712,13 +698,13 @@ public:
      * @brief Default-generated constructor
      *
      */
-    __iterator() = default;
+    __iterator() noexcept = default;
 
     /**
      * @brief Default-generated destructor
      *
      */
-    ~__iterator() = default;
+    ~__iterator() noexcept = default;
 
     /**
      * @brief Dereference operator
@@ -778,6 +764,15 @@ public:
         ++(*this);
         return tmp;
     }
+
+    template <typename A>
+    struct my_comp
+    {
+        bool fun(const A &a, const A &b)
+        {
+            return a < b;
+        }
+    };
 
     void print_iterator()
     {
