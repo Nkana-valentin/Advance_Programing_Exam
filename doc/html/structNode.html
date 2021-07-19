@@ -90,8 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a355321441c455ee4b0747cb58f7c4927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeced6b504f6d73bca2a87469b658c0f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#aeced6b504f6d73bca2a87469b658c0f1">Node</a> (const std::pair&lt; const K, V &gt; &amp;data, <a class="el" href="structNode.html">Node</a>&lt; K, V &gt; *parent)</td></tr>
 <tr class="separator:aeced6b504f6d73bca2a87469b658c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53bcb51e92b73ef066f9174f779cc7d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a53bcb51e92b73ef066f9174f779cc7d6">Node</a> ()=default</td></tr>
-<tr class="separator:a53bcb51e92b73ef066f9174f779cc7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3da9f2cfc0c42ce81b99cec0ea120f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#ab3da9f2cfc0c42ce81b99cec0ea120f7">Node</a> () noexcept=default</td></tr>
+<tr class="separator:ab3da9f2cfc0c42ce81b99cec0ea120f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39335389b531d8ef8ef0c077cbae140c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a39335389b531d8ef8ef0c077cbae140c">~Node</a> () noexcept=default</td></tr>
 <tr class="separator:a39335389b531d8ef8ef0c077cbae140c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bd8d80bc2184272848b73627464c3cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a0bd8d80bc2184272848b73627464c3cf">Node</a> (std::pair&lt; const K, V &gt; &amp;&amp;data, <a class="el" href="structNode.html">Node</a>&lt; K, V &gt; *left, <a class="el" href="structNode.html">Node</a>&lt; K, V &gt; *right, <a class="el" href="structNode.html">Node</a>&lt; K, V &gt; *parent) noexcept</td></tr>
@@ -245,8 +245,8 @@ template&lt;typename K , typename V &gt; </div>
 
 </div>
 </div>
-<a id="a53bcb51e92b73ef066f9174f779cc7d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53bcb51e92b73ef066f9174f779cc7d6">&#9670;&nbsp;</a></span>Node() <span class="overload">[4/8]</span></h2>
+<a id="ab3da9f2cfc0c42ce81b99cec0ea120f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3da9f2cfc0c42ce81b99cec0ea120f7">&#9670;&nbsp;</a></span>Node() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +265,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -372,7 +372,7 @@ template&lt;typename K , typename V &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

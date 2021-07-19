@@ -9,6 +9,11 @@ Iterator definition of the class bst\+:
 
 {\ttfamily \#include $<$bst.\+hpp$>$}
 
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbst_1_1____iterator_1_1my__comp}{my\+\_\+comp}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,7 +34,7 @@ using \mbox{\hyperlink{classbst_1_1____iterator_a362d01c0bb402f7e6f4c50207fcd3dc
 \begin{DoxyCompactList}\small\item\em Custom constructor for \mbox{\hyperlink{classbst_aa2020bb7983841d5cebaa5c3b09c4574}{iterator}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classbst_1_1____iterator_a59ed904c4b092c341f3e48bdb9d066b5}{\+\_\+\+\_\+iterator}} () noexcept=default
 \begin{DoxyCompactList}\small\item\em Default-\/generated constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classbst_1_1____iterator_a94d95197410f6849accd6c70fd2d299d}{$\sim$\+\_\+\+\_\+iterator}} ()=default
+\mbox{\hyperlink{classbst_1_1____iterator_a07e7b9487eaf95be26a5098302e51da2}{$\sim$\+\_\+\+\_\+iterator}} () noexcept=default
 \begin{DoxyCompactList}\small\item\em Default-\/generated destructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classbst_1_1____iterator_abc2f3e456b120222299f9d7ffc332df1}{reference}} \mbox{\hyperlink{classbst_1_1____iterator_aa757aded75499d1edcf84c8827ae042a}{operator$\ast$}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Dereference operator. \end{DoxyCompactList}\item 
@@ -37,7 +42,7 @@ using \mbox{\hyperlink{classbst_1_1____iterator_a362d01c0bb402f7e6f4c50207fcd3dc
 \item 
 \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} \& \mbox{\hyperlink{classbst_1_1____iterator_ade1e4284095e8bb72bc6e0833f543b39}{operator++}} () noexcept
 \item 
-\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} \mbox{\hyperlink{classbst_1_1____iterator_aec2e3cec69732a3c97c7671be65029a7}{operator++}} (int)
+\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} \mbox{\hyperlink{classbst_1_1____iterator_ae32966996fbc8c683267bf476c43e260}{operator++}} (int) noexcept
 \begin{DoxyCompactList}\small\item\em Post increment operator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_1_1____iterator_a2a92091bd7aa9474c29aeca354b12357}{print\+\_\+iterator}} ()
 \end{DoxyCompactItemize}
@@ -132,13 +137,13 @@ template$<$typename O $>$ \\
 
 Default-\/generated constructor. 
 
-\mbox{\Hypertarget{classbst_1_1____iterator_a94d95197410f6849accd6c70fd2d299d}\label{classbst_1_1____iterator_a94d95197410f6849accd6c70fd2d299d}} 
+\mbox{\Hypertarget{classbst_1_1____iterator_a07e7b9487eaf95be26a5098302e51da2}\label{classbst_1_1____iterator_a07e7b9487eaf95be26a5098302e51da2}} 
 \index{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$@{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}!````~\_\_iterator@{$\sim$\_\_iterator}}
 \index{````~\_\_iterator@{$\sim$\_\_iterator}!bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$@{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}}
 \doxysubsubsection{\texorpdfstring{$\sim$\_\_iterator()}{~\_\_iterator()}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
 template$<$typename O $>$ \\
-\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ O $>$\+::$\sim$\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+\mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ O $>$\+::$\sim$\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
 
 
@@ -167,13 +172,13 @@ Dereferences an \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}
 template$<$typename O $>$ \\
 \mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}\& \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ O $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
-\mbox{\Hypertarget{classbst_1_1____iterator_aec2e3cec69732a3c97c7671be65029a7}\label{classbst_1_1____iterator_aec2e3cec69732a3c97c7671be65029a7}} 
+\mbox{\Hypertarget{classbst_1_1____iterator_ae32966996fbc8c683267bf476c43e260}\label{classbst_1_1____iterator_ae32966996fbc8c683267bf476c43e260}} 
 \index{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$@{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}!operator++@{operator++}}
 \index{operator++@{operator++}!bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$@{bst$<$ K, V, C $>$::\_\_iterator$<$ O $>$}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename V , typename C  = std\+::less$<$\+K$>$$>$ \\
 template$<$typename O $>$ \\
-\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ O $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}} \mbox{\hyperlink{classbst}{bst}}$<$ K, V, C $>$\+::\mbox{\hyperlink{classbst_1_1____iterator}{\+\_\+\+\_\+iterator}}$<$ O $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

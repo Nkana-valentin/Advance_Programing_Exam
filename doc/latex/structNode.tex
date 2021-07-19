@@ -22,7 +22,7 @@ Collaboration diagram for Node$<$ K, V $>$\+:
 \item 
 \mbox{\hyperlink{structNode_aeced6b504f6d73bca2a87469b658c0f1}{Node}} (const std\+::pair$<$ const K, V $>$ \&data, \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$parent)
 \item 
-\mbox{\hyperlink{structNode_a53bcb51e92b73ef066f9174f779cc7d6}{Node}} ()=default
+\mbox{\hyperlink{structNode_ab3da9f2cfc0c42ce81b99cec0ea120f7}{Node}} () noexcept=default
 \item 
 \mbox{\hyperlink{structNode_a39335389b531d8ef8ef0c077cbae140c}{$\sim$\+Node}} () noexcept=default
 \item 
@@ -85,12 +85,12 @@ Construct a new \mbox{\hyperlink{structNode}{Node}} object with l-\/value refere
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
 \mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ const K, V $>$ \&}]{data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$ $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structNode_a53bcb51e92b73ef066f9174f779cc7d6}\label{structNode_a53bcb51e92b73ef066f9174f779cc7d6}} 
+\mbox{\Hypertarget{structNode_ab3da9f2cfc0c42ce81b99cec0ea120f7}\label{structNode_ab3da9f2cfc0c42ce81b99cec0ea120f7}} 
 \index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
 \index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
 \mbox{\Hypertarget{structNode_a39335389b531d8ef8ef0c077cbae140c}\label{structNode_a39335389b531d8ef8ef0c077cbae140c}} 
 \index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!````~Node@{$\sim$Node}}
@@ -115,7 +115,7 @@ Construct a new \mbox{\hyperlink{structNode}{Node}} object with r-\/value refere
 \index{Node@{Node}!Node$<$ K, V $>$@{Node$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{structNode}{Node}}$<$ K, V $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ const K, V $>$ \&\&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 \mbox{\Hypertarget{structNode_abd2eb3b57bb5a41bba0d8f9cbe059e5e}\label{structNode_abd2eb3b57bb5a41bba0d8f9cbe059e5e}} 
 \index{Node$<$ K, V $>$@{Node$<$ K, V $>$}!Node@{Node}}
