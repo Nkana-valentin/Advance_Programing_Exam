@@ -49,7 +49,7 @@ struct Node
 
     Node(const std::pair<const K, V> &data, Node<K, V> *parent) : _left{}, _right{}, _parent{parent}, _data{data} {}
 
-    Node() = default;
+    Node() noexcept = default;
     ~Node() noexcept = default;
 
     // move constructor
@@ -59,7 +59,7 @@ struct Node
      */
     Node(std::pair<const K, V> &&data, Node<K, V> *left, Node<K, V> *right, Node<K, V> *parent) noexcept : _left{left}, _right{right}, _parent{parent}, _data{std::move(data)} {}
 
-    Node(std::pair<const K, V> &&data) noexcept : _left{nullptr}, _right{nullptr}, _parent{nullptr}, _data{std::move(data)} {}
+    explicit Node(std::pair<const K, V> &&data) noexcept : _left{nullptr}, _right{nullptr}, _parent{nullptr}, _data{std::move(data)} {}
 
     Node(std::pair<const K, V> &&data, Node<K, V> *parent) noexcept : _left{nullptr}, _right{nullptr}, _parent{parent}, _data{std::move(data)} {}
 
@@ -118,17 +118,17 @@ private:
 
     int get_height(Node<K, V> *ptn) noexcept
     {
-
+        // Height of tree is the maximum distance between the root node and any leaf node of the tree.
         if (!ptn)
             return 0;
 
         return 1 + std::max(get_height(ptn->_left.get()), get_height(ptn->_right.get()));
     }
 
-    bool balance_tree_check(Node<K, V> *root_node) // maybe could be marked noexcept
+    bool balance_tree_check(Node<K, V> *root_node) noexcept // maybe could be marked noexcept
     {
 
-        if (!root_node)
+        if (!root_node)  // root_node.get() ==nullptr
             return true; // the empty tree is a balanced tree by definition;
 
         int left_height{get_height(root_node->_left.get())};
@@ -154,10 +154,11 @@ private:
 
 public:
     //bst() : _root{nullptr} {} // maybe use the default ctor;
-    bst() = default;
+    bst() noexcept = default;
     ~bst() noexcept = default; // all destructors should be marked noexcept
 
-    // move semantics
+    // move semantics:
+    //move ctor
     bst(bst &&tree) noexcept = default; // because we have a unique_ptr
     //bst(bst &&tree) noexcept : comp{std::move(tree.comp)}, _root{std::move(tree._root)} {}
 
@@ -182,18 +183,15 @@ public:
         //_root = std::unique_ptr<Node<K, V>>(new Node<K, V>(tree._root, nullptr));
     }
     // copy assignment: to avoid code duplication: deep copy
-    bst &operator=(bst &tree)
+    bst &operator=(bst &tree) noexcept
     {
-        _root.reset(); // clean my memory first.
-        auto tmp{tree};
-        *this = std::move(tmp);
+        _root.reset();          // clean my memory first.
+        auto tmp{tree};         // copy ctor
+        *this = std::move(tmp); // move ctor to avoid code duplication
         return *this;
     }
 
-    Node<K, V> *root() noexcept
-    {
-        return _root.get();
-    }
+    Node<K, V> *root() noexcept { return _root.get(); }
 
     void clear() noexcept // to destroy the object currently managed by the unique_ptr(if any) and takes the ownership of p.
     {
@@ -380,10 +378,15 @@ public:
     using iterator = __iterator<std::pair<const K, V>>;
     using const_iterator = __iterator<const std::pair<const K, V>>;
 
+    /* IT template <typename IT>
+    IT begin() noexcept;
+    IT begin() const noexcept;
+
+    IT template <typename IT> */
     iterator begin() noexcept
     {
-        //auto p = _root.get();
-        if (!_root)
+
+        if (!_root) //auto p = _root.get();
             return iterator{nullptr};
 
         auto p{_root.get()};
@@ -392,10 +395,6 @@ public:
         return iterator{p};
     }
 
-    /* iterator begin() noexcept
-    {
-        return iterator(_begin());
-    } */
     iterator end() noexcept
     {
         return iterator{nullptr};
@@ -412,16 +411,6 @@ public:
         return const_iterator{p};
     }
 
-    /* const_iterator cbegin() const noexcept
-    {
-        return const_iterator(_begin());
-    } */
-
-    const_iterator end() const noexcept
-    {
-        return const_iterator{nullptr};
-    }
-
     const_iterator cbegin() const noexcept
     {
         //auto p = _root.get();
@@ -433,6 +422,11 @@ public:
             p = (p->_left).get();
         }
         return const_iterator{p};
+    }
+
+    const_iterator end() const noexcept
+    {
+        return const_iterator{nullptr};
     }
 
     const_iterator cend() const noexcept
@@ -456,7 +450,22 @@ public:
         for (const auto it : tree)
             os << it.first << " ";
         return os;
-    }
+    } // range for loop
+
+    /* template <typename A, typename B, typename Z = std::less<>>
+    bool fun(const A &a, const B &b, Z cmp = Z{})
+    {
+        return cmp(a, b);
+    } */
+
+    template <typename A>
+    struct my_comp
+    {
+        bool fun(const A &a, const A &b)
+        {
+            return a < b;
+        }
+    };
 
     void balance();
 
@@ -657,7 +666,7 @@ std::pair<typename bst<K, V, C>::iterator, bool> bst<K, V, C>::emplace(Types &&.
 /// Overloadding of the operator []
 template <typename K, typename V, typename C>
 template <typename T>
-V &bst<K, V, C>::operator[](T &&key) noexcept
+V &bst<K, V, C>::operator[](T &&key) noexcept // to accept  both versions(l-val and r-val)
 {
 
     auto p = find(std::forward<T>(key));
@@ -690,7 +699,7 @@ public:
      *
      * Construct a new @ref __iterator that refers to @ref Node x
      */
-    explicit __iterator(Node<K, V> *x) noexcept : current{x} {}
+    explicit __iterator(Node<K, V> *x) noexcept : current{x} {} // it ctor
 
     friend class bst;
     using value_type = O; // the typename of the iterator
@@ -703,7 +712,7 @@ public:
      * @brief Default-generated constructor
      *
      */
-    __iterator() noexcept = default;
+    __iterator() = default;
 
     /**
      * @brief Default-generated destructor
@@ -762,7 +771,7 @@ public:
  * 
  * @return __iterator 
  */
-    __iterator operator++(int)
+    __iterator operator++(int) noexcept //noexcept?
     {
 
         auto tmp{*this};
