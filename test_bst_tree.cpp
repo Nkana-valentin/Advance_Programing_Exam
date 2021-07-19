@@ -5,6 +5,7 @@
 #include <ctime>
 #include <chrono>
 #include <map>
+#include <utility>
 
 int main()
 {
@@ -272,8 +273,17 @@ int main()
     rand_tree.clear();
     std::cout << rand_tree << "\n";
 
-    return 0;
-    /* bst<int, int>::my_comp<int> cmp;
+    //return 0;
+    bst<int, int>::iterator::my_comp<int> cmp;
     //auto bb = cmp.fun(test7 < test5);
-    std::cout << cmp.fun(5, 7) << "\n"; */
+    auto bb = cmp.fun(5, 7);
+    std::cout << "testing my own comparaison \n"
+              << bb << "\n";
+
+    /*   void test_find_function(const bst<int, int> &bst)
+    {
+    // simple test function to check that the const version of find works properly
+    bst.find(10);
+} */
+    return 1;
 }
