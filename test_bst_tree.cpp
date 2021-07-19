@@ -65,7 +65,7 @@ int main()
     std::cout << "Exam tree test: "
               << "\n";
 
-    bst<int, int> my_tree{}; // create an empty tree
+    bst<int, int> my_tree{}; // create an empty tree:  default ctor call to each members
     auto g = my_tree.insert({8, 8});
     auto h = my_tree.insert({3, 3});
     auto i = my_tree.insert({10, 10});
@@ -191,7 +191,8 @@ int main()
     std::cout << "Find tree minimum: "
               << "\n";
 
-    Node<int, int> p{}; // create a new node
+    //Node<int, int> p{}; // create a new node
+
     //auto itt{my_tree.tree_minimum(my_tree._root->get())};
 
     //std::cout << to_balanced.tree_minimum(to_balanced._root) << "\n";
@@ -272,4 +273,7 @@ int main()
     std::cout << rand_tree << "\n";
 
     return 0;
+    /* bst<int, int>::my_comp<int> cmp;
+    //auto bb = cmp.fun(test7 < test5);
+    std::cout << cmp.fun(5, 7) << "\n"; */
 }
